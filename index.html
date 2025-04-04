@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Moderate Lighting is the Best Solution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="advanced-styling.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
+    <style>
+        /* Loading spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Hide elements initially */
+        .hidden {
+            display: none;
+        }
+        
+        /* Style plan result */
+        #action-plan-result {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .plan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .plan-meta {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .plan-section {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .plan-section:last-child {
+            border-bottom: none;
+        }
+        
+        .resource-link {
+            display: block;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+            transition: all 0.2s ease;
+        }
+        
+        .resource-link:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+        
+        .resource-title {
+            display: block;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .resource-desc {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .download-btn, .email-btn {
+            padding: 0.6rem 1.2rem;
+        }
+        
+        .download-btn {
+            background-color: var(--success-color);
+        }
+        
+        .email-btn {
+            background-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Moderate Lighting</div>
+            <ul>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#safety">Safety</a></li>
+                <li><a href="#cost">Costs</a></li>
+                <li><a href="#health">Health</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Moderate Lighting is Better Than Excessive Lighting or No Lighting</h1>
+            <p>Social, Environmental, Health, and Astronomical Effects of Light Polution</p>
+            
+        </div>
+    </header>
+
+    <main>
+        <!-- Simplified Intro Section -->
+        <section id="intro" class="content-section">
+            <div class="section-container">
+                <h2>Light Pollution: A Balancing Act</h2>
+                <p class="stakeholder-message" id="intro-message">Light is essential for our cities, but excessive or poorly designed lighting creates problems for health, wildlife, and our connection to the night sky.</p>
+                
+                <div class="stakeholder-selector">
+                    <h3>Select Your Perspective:</h3>
+                    <div class="stakeholder-buttons">
+                        <button data-stakeholder="official" class="active">City Official</button>
+                        <button data-stakeholder="resident">Urban Resident</button>
+                        <button data-stakeholder="environmentalist">Environmental Advocate</button>
+                        <button data-stakeholder="health">Health Professional</button>
+                        <button data-stakeholder="astronomer">Astronomer</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add a visual comparison section after the intro -->
+        <section class="content-section">
+            <div class="section-container">
+                <h2>The Balance We Need</h2>
+                <div class="image-grid">
+                    <div class="image-card">
+                        <img src="https://www.worldatlas.com/r/w768/upload/b4/25/55/shutterstock-1494723773.jpg" alt="City skyline with excessive light pollution" class="evidence-image">
+                        <p class="image-caption">Excessive light pollution wastes energy and disrupts ecosystems</p>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://images.unsplash.com/photo-1507502707541-f369a3b18502?w=600" alt="Smart directional lighting" class="evidence-image">
+                        <p class="image-caption">Directed lighting improves visibility while reducing spillage</p>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://media.istockphoto.com/id/592031250/photo/milky-way-and-pink-light-at-mountains-night-colorful-landscape.jpg?s=612x612&w=0&k=20&c=MlBuwRU4M-eZda80ONcdV9NbwtyJQrvggug31A6vLJU=" alt="Night sky with stars" class="evidence-image">
+                        <p class="image-caption">Balanced lighting preserves our connection to the night sky</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Section -->
+        <section id="safety" class="content-section">
+            <div class="section-container">
+                <h2>Safety Without Excess</h2>
+                <p class="stakeholder-message" id="safety-message">Effective lighting enhances safety while reducing unnecessary light pollution.</p>
+                
+                <div class="comparison-container">
+                    <div class="image-comparison">
+                        <div class="after-image"></div>
+                        <div class="before-image"></div>
+                        <input type="range" id="comparison-slider" min="0" max="100" value="50" class="slider">
+                        <div class="slider-handle"></div>
+                        <div class="comparison-label left">Over-lit Street</div>
+                        <div class="comparison-label right">Smart Lighting</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Section -->
+        <section id="health" class="content-section">
+            <div class="section-container">
+                <h2>Health & Wellbeing</h2>
+                <p class="stakeholder-message" id="health-message">Excessive artificial light at night disrupts sleep and circadian rhythms, affecting public health.</p>
+                
+                <div class="evidence-container">
+                    <div class="image-card wide">
+                        <img src="https://integrishealth.org/-/media/blog/2023/oyh_sleep-hygeine.ashx?revision=003aea25-3a1d-4b74-b01d-17c19cfc0025" alt="Person having trouble sleeping due to light pollution" class="evidence-image">
+                        <p class="image-caption">Light exposure at night disrupts melatonin production and sleep patterns</p>
+                    </div>
+                    <div class="image-card wide">
+                        <img src="https://www.nwf.org/-/media/NEW-WEBSITE/Shared-Folder/Magazines/2023/Summer/LIGHT-POLLUTION-western-screech-owl-SUMMER23-1200x628.jpg" alt="Wildlife affected by light pollution" class="evidence-image">
+                        <p class="image-caption">Light pollution disrupts wildlife behavior, migration patterns, and ecosystems</p>
+                    </div>
+                </div>
+                
+                <div class="interactive-body-model">
+                    <h3>Interactive Health Impact Explorer</h3>
+                    <p class="explorer-intro">Discover how light pollution affects various systems in the human body</p>
+                    
+                    <div class="body-model-container">
+                        <div class="body-model-wrapper">
+                            <div class="model-controls">
+                                <button class="model-view-btn active" data-view="front">Front View</button>
+                                <button class="model-view-btn" data-view="side">Side View</button>
+                                <button class="model-view-btn" data-view="detailed">Detailed View</button>
+                            </div>
+                            
+                            <div class="body-model" id="body-model-canvas">
+                                <!-- SVG body model will be inserted here by JavaScript -->
+                                <div class="model-loading">Loading advanced body model...</div>
+                            </div>
+                            
+                            <div class="severity-indicator">
+                                <span>Impact Severity:</span>
+                                <div class="severity-levels">
+                                    <div class="severity-level" data-level="1">Minimal</div>
+                                    <div class="severity-level" data-level="2">Moderate</div>
+                                    <div class="severity-level" data-level="3">Significant</div>
+                                    <div class="severity-level active" data-level="4">Severe</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="body-insights" id="body-insights-panel">
+                            <h4>Select a body system to learn more</h4>
+                            <p class="default-message">Light exposure at night affects multiple systems in the human body. Click on highlighted areas to learn more.</p>
+                            
+                            <div class="system-info hidden" id="system-info">
+                                <h4 id="system-name">System Name</h4>
+                                <div id="system-content">
+                                    <!-- Content will be populated dynamically -->
+                                </div>
+                                
+                                <div class="system-tabs">
+                                    <button class="system-tab active" data-tab="effects">Effects</button>
+                                    <button class="system-tab" data-tab="research">Research</button>
+                                    <button class="system-tab" data-tab="solutions">Solutions</button>
+                                </div>
+                                
+                                <div class="system-tab-content active" id="effects-content">
+                                    <!-- Effects content populated dynamically -->
+                                </div>
+                                <div class="system-tab-content" id="research-content">
+                                    <!-- Research content populated dynamically -->
+                                </div>
+                                <div class="system-tab-content" id="solutions-content">
+                                    <!-- Solutions content populated dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="health-comparison">
+                        <h4>24-Hour Health Comparison</h4>
+                        <div class="comparison-toggle">
+                            <span>Natural Light Cycle</span>
+                            <label class="switch">
+                                <input type="checkbox" id="light-environment-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                            <span>Light Polluted Environment</span>
+                        </div>
+                        <div class="comparison-chart-container">
+                            <canvas id="health-metrics-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research and Resources Section -->
+        <section class="content-section" id="resources">
+            <div class="section-container">
+                <h2>Links of Research & Resources</h2>
+                <p>Learn more about balanced approaches to lighting from these trusted sources:</p>
+                
+                <div class="resources-grid">
+                    <a href="https://www.darksky.org/our-work/lighting/" class="resource-box" target="_blank">
+                        <h4>International Dark-Sky Association</h4>
+                        <p>Guidelines for responsible outdoor lighting</p>
+                    </a>
+                    
+                    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2627884/" class="resource-box" target="_blank">
+                        <h4>Health Research</h4>
+                        <p>Scientific studies on light at night and health impacts</p>
+                    </a>
+                    
+                    <a href="https://www.audubon.org/conservation/existing-light-pollution-policies" class="resource-box" target="_blank">
+                        <h4>Audubon Society</h4>
+                        <p>Light pollution policies to protect birds and wildlife</p>
+                    </a>
+                    
+                    <a href="https://www.nasa.gov/feature/goddard/2017/new-night-lights-maps-open-up-possible-real-time-applications/" class="resource-box" target="_blank">
+                        <h4>NASA Light Pollution Research</h4>
+                        <p>Satellite imagery tracking global light pollution</p>
+                    </a>
+                    
+                    <a href="https://smartcitiesworld.net/special-reports/special-reports/smart-street-lighting-a-city-managers-secret-weapon" class="resource-box" target="_blank">
+                        <h4>Smart City Lighting Solutions</h4>
+                        <p>Technology innovations for balanced urban lighting</p>
+                    </a>
+                    
+                    <a href="https://www.energy.gov/eere/ssl/led-lighting-facts" class="resource-box" target="_blank">
+                        <h4>Department of Energy</h4>
+                        <p>Energy-efficient lighting technologies and facts</p>
+                    </a>
+                    
+                    <a href="https://globeatnight.org/" class="resource-box" target="_blank">
+                        <h4>Globe at Night</h4>
+                        <p>Citizen-science program that tracks light pollution globally</p>
+                    </a>
+                    
+                    <a href="https://www.nature.com/articles/s41598-018-31102-4" class="resource-box" target="_blank">
+                        <h4>Nature Research</h4>
+                        <p>Scientific studies on ecological consequences of artificial light</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#intro">Home</a></li>
+                    <li><a href="#safety">Safety</a></li>
+                    <li><a href="#cost">Costs</a></li>
+                    <li><a href="#health">Health</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="core.js"></script>
+    <script src="stakeholder-content.js"></script>
+    <script src="visualizations.js"></script>
+    <script src="body-explorer-fixed.js"></script>
+    <script src="smart-safety-visualization.js"></script>
+    <script src="social-impacts.js"></script>
+    <script src="enhancements.js"></script>
+    <script src="visual-enhancements.js"></script>
+</body>
+</html>
