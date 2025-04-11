@@ -1,25 +1,19 @@
-/**
- * stakeholder-content.js - Replaced with essay on moderate urban lighting
- * DarkSky Initiative Project
- */
-
 document.addEventListener('DOMContentLoaded', function() {
     replaceWithModerateUlightingEssay();
 });
 
 function replaceWithModerateUlightingEssay() {
-    // Find the stakeholder selector container
+  
     const stakeholderSelector = document.querySelector('.stakeholder-selector');
     if (!stakeholderSelector) return;
     
-    // Create essay container to replace the stakeholder selector
+ 
     const essayContainer = document.createElement('div');
     essayContainer.className = 'moderate-lighting-essay';
-    
-    // Replace stakeholder selector with essay
+  
     stakeholderSelector.parentNode.replaceChild(essayContainer, stakeholderSelector);
     
-    // Add essay content
+    
     essayContainer.innerHTML = `
         <div class="essay-container">
             <h3>Finding Balance: The Case for Moderate Urban Lighting</h3>
@@ -102,7 +96,7 @@ function replaceWithModerateUlightingEssay() {
         </div>
     `;
     
-    // Add CSS styles for the essay
+   
     const styleElement = document.createElement('style');
     styleElement.textContent = `
         /* Moderate Lighting Essay Styles */
@@ -217,13 +211,13 @@ function replaceWithModerateUlightingEssay() {
     
     document.head.appendChild(styleElement);
     
-    // Update the intro message
+   
     const introMessage = document.getElementById('intro-message');
     if (introMessage) {
         introMessage.textContent = "Finding the right balance of urban lighting is crucial for creating cities that are safe, energy-efficient, and environmentally responsible.";
     }
     
-    // Update section messages if they exist
+   
     const safetyMessage = document.getElementById('safety-message');
     if (safetyMessage) {
         safetyMessage.textContent = "Strategic lighting placement and design can improve public safety while reducing energy costs and light pollution.";
