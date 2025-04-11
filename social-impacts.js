@@ -1,29 +1,23 @@
-/**
- * social-impacts.js - Social impact section for light pollution
- * DarkSky Initiative Project
- * Adds a section on social and relationship impacts of light pollution
- */
-
 document.addEventListener('DOMContentLoaded', function() {
     insertSocialImpactsSection();
 });
 
 function insertSocialImpactsSection() {
-    // Find the safety and health sections to insert between them
+    
     const safetySection = document.getElementById('safety');
     const healthSection = document.getElementById('health');
     
     if (!safetySection || !healthSection) return;
     
-    // Create new social impacts section
+ 
     const socialSection = document.createElement('section');
     socialSection.id = 'social';
     socialSection.className = 'content-section';
     
-    // Insert the section after safety and before health
+    
     healthSection.parentNode.insertBefore(socialSection, healthSection);
     
-    // Add content to the section
+    
     socialSection.innerHTML = `
         <div class="section-container">
             <h2>Social & Relationship Impacts</h2>
@@ -164,7 +158,7 @@ function insertSocialImpactsSection() {
         </div>
     `;
     
-    // Add CSS styles for the new section
+ 
     const styleElement = document.createElement('style');
     styleElement.textContent = `
         /* Social Impacts Section Styles */
@@ -404,7 +398,7 @@ function insertSocialImpactsSection() {
     
     document.head.appendChild(styleElement);
     
-    // Add the section link to the navigation menu
+   
     const navList = document.querySelector('nav ul');
     if (navList) {
         const costLink = Array.from(navList.querySelectorAll('li a')).find(link => link.getAttribute('href') === '#cost');
@@ -417,11 +411,11 @@ function insertSocialImpactsSection() {
             const socialLi = document.createElement('li');
             socialLi.innerHTML = '<a href="#social">Social</a>';
             
-            // Insert between cost and health if both exist
+            
             if (costLi && healthLi) {
                 navList.insertBefore(socialLi, healthLi);
             } else {
-                // Otherwise just append to the end
+                
                 navList.appendChild(socialLi);
             }
         }
@@ -429,7 +423,7 @@ function insertSocialImpactsSection() {
     
     console.log('Social impacts section added');
     
-    // Add animations to make the section appear with a nice fade-in
+    
     setTimeout(() => {
         const section = document.getElementById('social');
         if (section) {
