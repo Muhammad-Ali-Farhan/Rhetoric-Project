@@ -1,10 +1,6 @@
-/**
- * body-explorer-fixed.js - Fixed implementation of the anatomical body model
- * DarkSky Initiative Project
- */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Wait a short time to ensure any other scripts have completed
+   
     setTimeout(initializeFixedBodyModel, 100);
 });
 
@@ -17,13 +13,13 @@ function initializeFixedBodyModel() {
         return;
     }
     
-    // Create anatomically correct SVG model with enhanced visual styling
+   
     const svgBody = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svgBody.setAttribute('class', 'body-svg');
     svgBody.setAttribute('viewBox', '0 0 300 500');
     svgBody.setAttribute('preserveAspectRatio', 'xMidYMid meet');
     
-    // Human body SVG with proper anatomy and enhanced visual styling
+    
     svgBody.innerHTML = `
         <defs>
             <!-- Enhanced body gradient for more professional appearance -->
@@ -192,7 +188,7 @@ function initializeFixedBodyModel() {
         </g>
     `;
     
-    // Add CSS specifically for the body explorer
+    
     const style = document.createElement('style');
     style.textContent = `
         /* Enhanced professional styling */
@@ -258,15 +254,14 @@ function initializeFixedBodyModel() {
     
     document.head.appendChild(style);
     
-    // Add SVG to container
+    
     bodyModelCanvas.innerHTML = '';
     bodyModelCanvas.appendChild(svgBody);
     
-    // Remove loading message
+    
     const loadingMsg = bodyModelCanvas.querySelector('.model-loading');
     if (loadingMsg) loadingMsg.remove();
-    
-    // Add hover effect to make the body model respond to mouse movements
+   
     bodyModelCanvas.addEventListener('mouseover', function() {
         const hotspots = document.querySelectorAll('.body-hotspot');
         hotspots.forEach(hotspot => {
@@ -274,32 +269,32 @@ function initializeFixedBodyModel() {
         });
     });
 
-    // Add click tracking with enhanced feedback
+    
     document.querySelectorAll('.body-hotspot').forEach(hotspot => {
         hotspot.addEventListener('click', function() {
-            // Visual feedback for click
+          
             const allHotspots = document.querySelectorAll('.body-hotspot');
             allHotspots.forEach(h => h.classList.remove('active'));
             this.classList.add('active');
             
-            // Add subtle animation for better feedback
+           
             this.style.animation = 'none';
             setTimeout(() => {
                 this.style.animation = 'pulse 0.5s ease-out';
             }, 10);
             
-            // Show the system information
+            
             const system = this.getAttribute('data-system');
             showSystemInfo(system);
             
-            // Track the interaction
+            
             if (typeof trackEvent === 'function') {
                 trackEvent('health_system_selected', { system: system });
             }
         });
     });
     
-    // Add view button handlers
+    
     document.querySelectorAll('.model-view-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             const view = this.getAttribute('data-view');
@@ -313,7 +308,7 @@ function initializeFixedBodyModel() {
         });
     });
     
-    // Add enhanced interactive effects for the human body
+    
     const humanBody = document.querySelector('.human-body');
     if (humanBody) {
         humanBody.style.transformOrigin = 'center';
@@ -325,11 +320,11 @@ function initializeFixedBodyModel() {
             const centerX = bounds.width / 2;
             const centerY = bounds.height / 2;
             
-            // Calculate rotation based on mouse position
+            
             const rotateY = (mouseX - centerX) / 50;
             const rotateX = (mouseY - centerY) / 50;
             
-            // Apply subtle rotation effect
+            
             humanBody.style.transform = `rotateY(${rotateY}deg) rotateX(${-rotateX}deg)`;
         });
         
@@ -340,25 +335,25 @@ function initializeFixedBodyModel() {
     
     console.log('Fixed anatomical body model initialized');
 
-    // Remove the severity indicator section as requested
+    
     const severityIndicator = document.querySelector('.severity-indicator');
     if (severityIndicator) {
         severityIndicator.style.display = 'none';
     }
 
-    // Initialize health comparison chart
+    
     initializeHealthMetricsChart();
 
-    // Initialize system tabs
+    
     initializeSystemTabs();
 }
 
-// Update body view (front, side, detailed)
+
 function updateBodyView(view) {
     const svg = document.querySelector('.body-svg');
     if (!svg) return;
     
-    // Apply smooth transition
+    
     svg.style.transition = 'all 0.5s ease-in-out';
     
     if (view === 'front') {
@@ -379,7 +374,7 @@ function updateBodyView(view) {
     }
 }
 
-// Show system information when a body part is clicked
+
 function showSystemInfo(system) {
     const systemInfo = document.getElementById('system-info');
     const systemName = document.getElementById('system-name');
@@ -392,7 +387,7 @@ function showSystemInfo(system) {
         return;
     }
     
-    // Get system data from window object or use fallback data
+    
     const systemData = window.systemData || getDefaultSystemData();
     
     if (!systemData[system]) {
@@ -400,17 +395,17 @@ function showSystemInfo(system) {
         return;
     }
     
-    // Show the system info section
+    
     systemInfo.classList.remove('hidden');
     
-    // Update content
+    
     systemName.textContent = systemData[system].name;
     
     if (effectsContent) effectsContent.innerHTML = systemData[system].effects || '';
     if (researchContent) researchContent.innerHTML = systemData[system].research || '';
     if (solutionsContent) solutionsContent.innerHTML = systemData[system].solutions || '';
     
-    // Activate effects tab by default
+    
     document.querySelectorAll('.system-tab').forEach(tab => {
         tab.classList.remove('active');
     });
@@ -424,23 +419,22 @@ function showSystemInfo(system) {
     
     if (effectsContent) effectsContent.classList.add('active');
     
-    // Initialize system tabs if needed
+   
     initializeSystemTabs();
 }
 
-// Initialize tabs for system info
+
 function initializeSystemTabs() {
     document.querySelectorAll('.system-tab').forEach(tab => {
         tab.addEventListener('click', function() {
             const tabType = this.getAttribute('data-tab');
-            
-            // Update active tab
+       
             document.querySelectorAll('.system-tab').forEach(t => {
                 t.classList.remove('active');
             });
             this.classList.add('active');
             
-            // Show appropriate content
+           
             document.querySelectorAll('.system-tab-content').forEach(content => {
                 content.classList.remove('active');
             });
@@ -451,7 +445,7 @@ function initializeSystemTabs() {
     });
 }
 
-// Enhanced system data with detailed, professional information
+
 function getDefaultSystemData() {
     return {
         brain: {
@@ -904,29 +898,29 @@ function getDefaultSystemData() {
     };
 }
 
-// Initialize health metrics chart
+
 function initializeHealthMetricsChart() {
     const ctx = document.getElementById('health-metrics-chart');
     if (!ctx) return;
     
-    // Time labels (24-hour format)
+    
     const timeLabels = ['6AM', '9AM', '12PM', '3PM', '6PM', '9PM', '12AM', '3AM', '6AM'];
     
-    // Define datasets for natural environment
+    
     const naturalEnvironmentData = {
         melatonin: [5, 3, 2, 2, 3, 15, 65, 90, 70],
         cortisol: [80, 65, 40, 30, 20, 10, 5, 10, 70],
         alertness: [60, 85, 90, 80, 75, 55, 25, 10, 40]
     };
     
-    // Define datasets for light polluted environment
+  
     const lightPollutedData = {
-        melatonin: [5, 3, 2, 2, 3, 7, 25, 40, 30], // Suppressed melatonin production at night
-        cortisol: [80, 65, 40, 30, 25, 20, 15, 20, 75], // Higher cortisol at night - stress hormone doesn't decrease properly
-        alertness: [60, 85, 90, 80, 75, 70, 50, 40, 55]  // Higher alertness at night - harder to fall asleep, more fatigue next day
+        melatonin: [5, 3, 2, 2, 3, 7, 25, 40, 30], 
+        cortisol: [80, 65, 40, 30, 25, 20, 15, 20, 75], 
+        alertness: [60, 85, 90, 80, 75, 70, 50, 40, 55]  
     };
     
-    // Create chart with natural environment data initially
+    
     healthChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -995,16 +989,16 @@ function initializeHealthMetricsChart() {
         }
     });
     
-    // Add toggle functionality
+ 
     const toggle = document.getElementById('light-environment-toggle');
     if (toggle) {
         toggle.addEventListener('change', function() {
-            // Update chart title
+          
             healthChart.options.plugins.title.text = this.checked ? 
                 'Light Polluted Environment' : 
                 'Natural Light-Dark Cycle';
             
-            // Update datasets
+           
             const currentData = this.checked ? lightPollutedData : naturalEnvironmentData;
             
             healthChart.data.datasets[0].data = currentData.melatonin;
@@ -1013,7 +1007,7 @@ function initializeHealthMetricsChart() {
             
             healthChart.update();
             
-            // Track the event
+          
             trackEvent('health_chart_toggled', { 
                 mode: this.checked ? 'light_polluted' : 'natural' 
             });
