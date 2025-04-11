@@ -27,7 +27,7 @@
     position: relative;
   }
   
-  /* Interactive comparison slider styles */
+ 
   .comparison-container {
     position: relative;
     width: 100%;
@@ -88,7 +88,7 @@
     justify-content: center;
   }
   
-  /* Calculator styles */
+  
   .calculator-container {
     background: var(--light-color);
     border-radius: 8px;
@@ -101,7 +101,7 @@
     margin-bottom: 1.5rem;
   }
   
-  /* Base typography and spacing */
+
   h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
@@ -139,7 +139,7 @@
     font-size: 1.1rem;
   }
   
-  /* Buttons and interactive elements */
+
   button, .button {
     background-color: var(--secondary-color);
     color: white;
@@ -173,7 +173,7 @@
     box-shadow: 0 6px 16px rgba(243, 156, 18, 0.4);
   }
   
-  /* Tab systems styling */
+
   .tab-buttons, .insight-tabs, .calculator-tabs, .map-filters, .resources-filters, .vr-selector {
     display: flex;
     flex-wrap: wrap;
@@ -214,7 +214,7 @@
     display: block;
   }
   
-  /* Navigation styling */
+
   nav {
     display: flex;
     justify-content: space-between;
@@ -264,7 +264,7 @@
     width: 100%;
   }
   
-  /* Hero section */
+  
   .hero {
     display: flex;
     flex-direction: column;
@@ -291,7 +291,7 @@
     opacity: 0.9;
   }
   
-  /* Parallax section */
+  
   .parallax-section {
     position: relative;
     height: 80vh;
@@ -347,7 +347,7 @@
     text-shadow: 0 1px 5px rgba(0,0,0,0.5);
   }
   
-  /* Stakeholder selector */
+
   .stakeholder-selector {
     background: rgba(0,0,0,0.5);
     border-radius: 10px;
@@ -387,7 +387,7 @@
     font-weight: 600;
   }
   
-  /* Content sections */
+  
   .content-section {
     padding: 6rem 0;
   }
@@ -406,7 +406,7 @@
     max-width: 800px;
   }
   
-  /* Enhanced comparison tool */
+
   .image-comparison {
     position: relative;
     width: 100%;
@@ -467,7 +467,7 @@
     margin-top: 2rem;
   }
   
-  /* Interactive body model */
+
   .body-model-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -509,7 +509,7 @@
     border-radius: 0 5px 5px 0;
   }
   
-  /* Ecosystem simulator */
+
   .ecosystem-controls {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -526,7 +526,7 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   }
   
-  /* VR Experience section */
+
   .vr-experience-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -567,7 +567,7 @@
     font-size: 0.9rem;
   }
   
-  /* Footer styling */
+
   footer {
     background-color: var(--primary-color);
     color: white;
@@ -614,7 +614,6 @@
     margin-top: 3rem;
   }
   
-  /* Animations */
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -638,7 +637,7 @@
     }
   }
   
-  /* Media Queries for Responsiveness */
+  
   @media (max-width: 1024px) {
     .vr-experience-container,
     .body-model-container {
@@ -727,7 +726,7 @@
     }
   }
   
-  /* Enhance the body model section with gradient background */
+  
   .body-model {
     background: linear-gradient(135deg, var(--light-color) 0%, #d6e4f0 100%);
     border-radius: 12px;
@@ -737,7 +736,7 @@
     transition: all 0.3s ease;
   }
   
-  /* Add animation for body hotspots */
+  
   .body-hotspot {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
@@ -747,7 +746,7 @@
     transform: scale(1.2);
   }
   
-  /* Enhance modal styling */
+
   .modal {
     display: none;
     position: fixed;
@@ -818,7 +817,6 @@
     z-index: 1001;
   }
   
-  /* Add glowing effect to action button */
   #generate-plan-btn {
     background: linear-gradient(45deg, var(--secondary-color), #2574a9);
     position: relative;
@@ -843,7 +841,7 @@
     left: 100%;
   }
   
-  /* Animate plan result appearance */
+
   #action-plan-result {
     opacity: 0;
     transform: translateY(20px);
@@ -855,14 +853,14 @@
     transform: translateY(0);
   }
   
-  /* Add a night sky background pattern */
+ 
   .content-section:nth-child(odd) {
     background-color: #f9f9f9;
     background-image: radial-gradient(#e1e1e1 1px, transparent 1px);
     background-size: 20px 20px;
   }
   
-  /* Enhance the header with a subtle animation */
+  
   .hero h1 {
     animation: fadeInUp 1.2s ease forwards;
   }
@@ -890,7 +888,7 @@
     }
   }
   
-  /* Style the stakeholder buttons with a night theme */
+  
   .stakeholder-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -924,7 +922,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
   
-  /* Add moving stars animation in the background */
+  
   .lights-container {
     position: fixed;
     top: 0;
@@ -957,7 +955,7 @@
     }
   }
   
-  /* Style the form checkboxes */
+
   .checkbox-group {
     display: flex;
     flex-wrap: wrap;
@@ -983,13 +981,13 @@
     cursor: pointer;
   }
   
-  /* Add subtle glow to button interactions */
+  
   button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
   }
   
-  /* Add subtle animations to section titles */
+ 
   .section-container h2 {
     position: relative;
     display: inline-block;
@@ -1012,7 +1010,7 @@
     transform: scaleX(1);
   }
   
-  /* Add styling for the image grid and evidence sections */
+  
   .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1061,7 +1059,7 @@
     border-top: 3px solid var(--secondary-color);
   }
   
-  /* Add styling for resources grid */
+ 
   .resources-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1100,7 +1098,7 @@
     color: #666;
   }
   
-  /* Add responsive styling for mobile */
+  
   @media (max-width: 768px) {
     .image-grid, .evidence-container {
         grid-template-columns: 1fr;
@@ -1115,7 +1113,7 @@
     }
   }
   
-  /* Enhanced Interactive Health Explorer */
+  
   .interactive-body-model {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 12px;
@@ -1424,7 +1422,7 @@
     height: 300px;
   }
   
-  /* Research citation styling */
+ 
   .research-citation {
     display: block;
     font-size: 0.85rem;
@@ -1443,7 +1441,7 @@
     text-decoration: underline;
   }
   
-  /* Animated glow effect for active system */
+ 
   @keyframes glow {
     0% {
         filter: drop-shadow(0 0 5px rgba(52, 152, 219, 0.7));
@@ -1460,7 +1458,7 @@
     animation: glow 2s infinite;
   }
   
-  /* Visual indicator for impact severity */
+
   .impact-severity {
     display: inline-block;
     padding: 0.2rem 0.5rem;
@@ -1483,7 +1481,7 @@
     background-color: #e74c3c;
   }
 
-  /* Enhanced Safety Section Styles */
+ 
   #safety {
     background-color: #f8f9fa;
   }
