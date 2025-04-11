@@ -1,31 +1,26 @@
-/**
- * smart-safety-visualization.js - Advanced interactive visualization for the Safety section
- * DarkSky Initiative Project
- * Enhances the safety comparison with data-driven visuals and interactive elements
- */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize after a slight delay to ensure all other elements are loaded
+  
     setTimeout(initializeSafetyVisualization, 200);
 });
 
 function initializeSafetyVisualization() {
-    // Get the safety section container
+  
     const safetySection = document.getElementById('safety');
     if (!safetySection) return;
     
-    // Find the comparison container and replace it
+   
     const comparisonContainer = safetySection.querySelector('.comparison-container');
     if (!comparisonContainer) return;
     
-    // Create new urban lighting scenario container
+
     const urbanLightingContainer = document.createElement('div');
     urbanLightingContainer.className = 'urban-lighting-scenario';
     
-    // Replace the existing container
+   
     comparisonContainer.parentNode.replaceChild(urbanLightingContainer, comparisonContainer);
     
-    // Add urban lighting scenario content
+    
     urbanLightingContainer.innerHTML = `
         <div class="lighting-scenario-container">
             <h3>Urban Lighting Scenarios</h3>
@@ -145,7 +140,7 @@ function initializeSafetyVisualization() {
         </div>
     `;
     
-    // Add CSS styles for the new content
+  
     const styleElement = document.createElement('style');
     styleElement.textContent = `
         /* Urban Lighting Scenario Styles */
@@ -415,7 +410,7 @@ function initializeSafetyVisualization() {
     
     document.head.appendChild(styleElement);
     
-    // Add JavaScript for slider functionality
+    
     initializeLightingScenarios();
 }
 
@@ -433,7 +428,6 @@ function initializeLightingScenarios() {
     const moderateLightPanel = document.getElementById('moderate-light-panel');
     const excessiveLightPanel = document.getElementById('excessive-light-panel');
     
-    // Add fallback if the main image fails to load
     if (lightingScene) {
         const img = new Image();
         img.onload = function() {
@@ -443,7 +437,7 @@ function initializeLightingScenarios() {
             console.log("Background image failed to load, using fallback");
             lightingScene.style.backgroundImage = "url('https://images.pexels.com/photos/2129796/pexels-photo-2129796.jpeg?auto=compress&cs=tinysrgb&w=1600')";
         };
-        // Extract URL from the background-image CSS property
+        
         const style = getComputedStyle(lightingScene);
         const urlMatch = style.backgroundImage.match(/url\(['"]?(.*?)['"]?\)/);
         if (urlMatch && urlMatch[1]) {
@@ -451,21 +445,21 @@ function initializeLightingScenarios() {
         }
     }
     
-    // Set initial state
+
     updateScenario(1);
     
-    // Add event listener for slider
+  
     slider.addEventListener('input', function() {
         const value = parseInt(this.value);
         updateScenario(value);
     });
     
-    // Add change event to track analytics
+
     slider.addEventListener('change', function() {
         const value = parseInt(this.value);
         const scenarioNames = ['No Lighting', 'Smart Lighting', 'Light Pollution'];
         
-        // Track the event if trackEvent function exists
+       
         if (typeof trackEvent === 'function') {
             trackEvent('lighting_scenario_selected', { 
                 scenario: scenarioNames[value],
@@ -476,14 +470,13 @@ function initializeLightingScenarios() {
     
     function updateScenario(value) {
         console.log("Updating scenario to value:", value);
-        
-        // Update the lighting scene by changing CSS classes
+       
         if (lightingScene) {
             lightingScene.classList.remove('lighting-level-0', 'lighting-level-1', 'lighting-level-2');
             lightingScene.classList.add(`lighting-level-${value}`);
         }
         
-        // Update labels
+        
         [noLightLabel, moderateLightLabel, excessiveLightLabel].forEach(label => {
             if (label) label.classList.remove('active');
         });
@@ -492,7 +485,7 @@ function initializeLightingScenarios() {
         if (value === 1 && moderateLightLabel) moderateLightLabel.classList.add('active');
         if (value === 2 && excessiveLightLabel) excessiveLightLabel.classList.add('active');
         
-        // Update content panels
+        
         [noLightPanel, moderateLightPanel, excessiveLightPanel].forEach(panel => {
             if (panel) panel.classList.remove('active');
         });
@@ -509,13 +502,13 @@ function initializeVisualizationTabs() {
     
     tabs.forEach(tab => {
         tab.addEventListener('click', function() {
-            // Update active tab
+         
             document.querySelectorAll('.vis-tab').forEach(t => {
                 t.classList.remove('active');
             });
             this.classList.add('active');
             
-            // Show appropriate panel
+          
             const tabType = this.getAttribute('data-tab');
             document.querySelectorAll('.vis-panel').forEach(panel => {
                 panel.classList.remove('active');
@@ -523,8 +516,7 @@ function initializeVisualizationTabs() {
             
             const activePanel = document.getElementById(`${tabType}-panel`);
             if (activePanel) activePanel.classList.add('active');
-            
-            // Track event if tracking function exists
+          
             if (typeof trackEvent === 'function') {
                 trackEvent('safety_visualization_tab_changed', { tab: tabType });
             }
@@ -538,17 +530,17 @@ function initializeComparisonSlider() {
     
     if (!slider || !afterImage) return;
     
-    // Set initial position
+
     updateSliderPosition(50);
     
-    // Add mouse and touch event listeners
+ 
     slider.addEventListener('mousedown', startDragging);
     slider.addEventListener('touchstart', startDragging, { passive: true });
     
     function startDragging(e) {
         e.preventDefault();
         
-        // Add mousemove and mouseup event listeners
+      
         document.addEventListener('mousemove', moveSlider);
         document.addEventListener('touchmove', moveSlider, { passive: true });
         document.addEventListener('mouseup', stopDragging);
@@ -558,39 +550,38 @@ function initializeComparisonSlider() {
     function moveSlider(e) {
         let clientX;
         
-        // Get clientX for both mouse and touch events
+        
         if (e.type === 'touchmove') {
             clientX = e.touches[0].clientX;
         } else {
             clientX = e.clientX;
         }
-        
-        // Calculate slider position
+    
         const imageComparison = document.querySelector('.image-comparison');
         const rect = imageComparison.getBoundingClientRect();
         let position = ((clientX - rect.left) / rect.width) * 100;
         
-        // Constrain position between 0 and 100
+     
         position = Math.min(Math.max(position, 0), 100);
         
         updateSliderPosition(position);
     }
     
     function stopDragging() {
-        // Remove event listeners
+     
         document.removeEventListener('mousemove', moveSlider);
         document.removeEventListener('touchmove', moveSlider);
         document.removeEventListener('mouseup', stopDragging);
         document.removeEventListener('touchend', stopDragging);
         
-        // Track event if tracking function exists
+        
         if (typeof trackEvent === 'function') {
             trackEvent('safety_comparison_slider_used', { position: slider.style.left });
         }
     }
     
     function updateSliderPosition(position) {
-        // Update slider and after image clip path
+       
         slider.style.left = `${position}%`;
         afterImage.style.clipPath = `polygon(${position}% 0, 100% 0, 100% 100%, ${position}% 100%)`;
     }
@@ -600,7 +591,7 @@ function initializeMapScenarios() {
     const scenarioSelect = document.getElementById('lighting-scenario');
     if (!scenarioSelect) return;
     
-    // Set up scenario data
+    
     const scenarioData = {
         current: {
             energy: '100%',
@@ -624,26 +615,26 @@ function initializeMapScenarios() {
         }
     };
     
-    // Set initial values
+   
     updateScenarioMetrics('current');
     
-    // Add change event listener
+    
     scenarioSelect.addEventListener('change', function() {
         const scenario = this.value;
         updateScenarioMetrics(scenario);
         
-        // Track event if tracking function exists
+        
         if (typeof trackEvent === 'function') {
             trackEvent('safety_map_scenario_changed', { scenario: scenario });
         }
     });
     
-    // Set up layer toggles
+  
     document.querySelectorAll('.layer-toggle input').forEach(toggle => {
         toggle.addEventListener('change', function() {
             const layer = this.getAttribute('data-layer');
             
-            // Track event if tracking function exists
+           
             if (typeof trackEvent === 'function') {
                 trackEvent('safety_map_layer_toggled', { 
                     layer: layer,
